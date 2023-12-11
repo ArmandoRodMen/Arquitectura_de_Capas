@@ -17,6 +17,7 @@ const FileStore = fileStore(session);
 import MongoStore from "connect-mongo";
 import "../src/DAO/fs/db/configDB.js";
 import config from "./config.js";
+import cors from "cors";
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("SecretCookie"));
 app.use(express.static(__dirname + "/public"));
+app.use(cors());
 
 const URI = config.MONGO_URI;
 
