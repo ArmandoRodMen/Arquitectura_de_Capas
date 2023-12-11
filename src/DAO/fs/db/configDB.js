@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import config from "../../../config.js";
 
-const URI = "mongodb+srv://ArmandoRod:coderhouse@cluster0.yl8erzs.mongodb.net/ecommerce?retryWrites=true&w=majority";
+const URI = config.MONGO_URI;
 
 mongoose.connect(URI)
 .then(()=>console.log("Conectado a la DB"))
