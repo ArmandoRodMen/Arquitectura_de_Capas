@@ -51,7 +51,7 @@ export const updateProductInCart= async (idCart, idProduct, quantity) => {
         return cart;
     }
 
-    export const deleteProductInCart= async (idCart, idProduct)=>{
+export const deleteProductInCart= async (idCart, idProduct)=>{
         const cart = await cartsModel.findById(idCart);
         if (!cart) {
         throw new Error("Cart not found");
@@ -66,7 +66,7 @@ export const updateProductInCart= async (idCart, idProduct, quantity) => {
         return cart.save();
     }
 
-    export const deleteProductsInCart= async (idCart)=>{
+export const deleteProductsInCart= async (idCart)=>{
         const cart = await cartsModel.findById(idCart);
         if (!cart) {
             throw new Error("Cart not found");
@@ -75,7 +75,7 @@ export const updateProductInCart= async (idCart, idProduct, quantity) => {
         await cart.save();
     }
 
-    export const updateAllProducts= async (idCart, products)=>{
+export const updateAllProducts= async (idCart, products)=>{
         const cart = await cartsModel.findById(idCart);
         const newProducts = products;
         cart.products = newProducts;
@@ -83,12 +83,12 @@ export const updateProductInCart= async (idCart, idProduct, quantity) => {
         return cart
     }
 
-    export const getCarts = async ()=> {
+export const getCarts = async ()=> {
         const carts = await cartsModel.find();
         return carts;
     }
 
-    export const deleteCart= async (id)=>{
+export const deleteCart= async (id)=>{
         const result = await cartsModel.deleteOne({_id: id});
         return result;
     }

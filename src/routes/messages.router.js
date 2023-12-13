@@ -7,7 +7,6 @@ import {
 const router = Router();
 
 router.get("/", findMessages);
-
 router.post("/",createMessage);
 
 export default router;
